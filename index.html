@@ -20,7 +20,7 @@ function data() {
 var client = new WebTorrent()
 
 
-var torrentId = 'magnet:?xt=urn:btih:'+ Window.location.hash.substring(1);
+var torrentId = 'magnet:?xt=urn:btih:'+ window.location.hash.substring(1);
 
 client.add(torrentId, function (torrent) {
 
