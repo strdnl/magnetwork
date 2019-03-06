@@ -1,0 +1,46 @@
+
+<html>
+<meta name="viewport" content="width=device-
+
+width, initial-scale=1">
+<link rel="stylesheet" 
+
+href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+<div class="w3-container"> 
+  <button onclick="data()">Test</button>
+    
+</div>
+
+
+<script 
+
+src="https://cdn.jsdelivr.net/webtorrent/latest/webtorre
+
+nt.min.js"></script>
+
+<script >
+
+function data() {
+
+
+var client = new WebTorrent()
+
+
+var torrentId = 'magnet:?xt=urn:btih:'+ Window.location.hash.substring(1);
+
+client.add(torrentId, function (torrent) {
+
+  var file = torrent.files.find(function (file) {
+    return file.name.endsWith('.html')
+  })
+
+  // Display the file by adding it to the DOM.
+  // Supports video, audio, image files, and more!
+file.appendTo('body')
+
+})
+}
+</script>
+</body>
+<html>
